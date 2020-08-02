@@ -11,8 +11,9 @@
                     <router-link to="/stocks" activeClass="active" tag="li"><a>Stocks</a></router-link>
                 </ul>
                 <strong class="navbar-text navbar-right">Funds: {{ funds | currency }}</strong>
+
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" @click="endDay">End Day</a></li>
+                    <li><a href="#" >End Day</a></li>
                     <li
                             class="dropdown"
                             :class="{open: isDropdownOpen}"
@@ -25,8 +26,8 @@
                                 aria-haspopup="true"
                                 aria-expanded="false">Save & Load <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" @click="saveData">Save Data</a></li>
-                            <li><a href="#" @click="loadData">Load Data</a></li>
+                            <li><a href="#" >Save Data</a></li>
+                            <li><a href="#">Load Data</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -39,6 +40,11 @@ export default {
     data() {
         return {
             isDropdownOpen: false
+        }
+    },
+    computed: {
+        funds() {
+            return this.$store.getters.funds;
         }
     }
 }
