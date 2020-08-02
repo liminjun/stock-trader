@@ -15,9 +15,7 @@
                     placeholder="Quantity"
                     v-model="quantity">
                 </div>
-                <div>
-                    {{ !Number.isInteger(quantity) }}
-                </div>
+               
                 <div class="pull-right">
                     <button 
                     class="btn btn-success"
