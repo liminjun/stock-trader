@@ -1,10 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueResoure from 'vue-resource'
 import App from './App.vue'
 import { routes } from './routes'
 import store from './store/store'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+Vue.use(VueResoure);
+
+Vue.http.options.root = 'https://vuejs-http-demo-1b3c3.firebaseio.com/';
+
 Vue.filter('currency', (value)=> {
   return '$' + value.toLocaleString()
 })
