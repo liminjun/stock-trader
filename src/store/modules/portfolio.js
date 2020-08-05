@@ -25,8 +25,10 @@ const mutations = {
         state.funds += stockPrice * quantity
     },
     'SET_PORTFOLIO' (state, portfolio) {
+        
         state.funds = portfolio.funds;
-        state.stockPortfolio = portfolio.stockPortfolio? portfolio.stockPortfolio : [];
+
+        state.stocks = portfolio.stockPortfolio? portfolio.stockPortfolio : [];
     }
 }
 
@@ -38,6 +40,7 @@ const actions = {
 
 const getters = {
     stockPortfolio (state, getters) {
+
         return state.stocks.map(stock => {
             const record = getters.stocks.find(element => element.id == stock.id)
             return {

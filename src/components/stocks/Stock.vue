@@ -53,7 +53,6 @@ export default {
     },
     methods: {
         buyStock() {
-            debugger
             const order = {
                 stockId: this.stock.id,
                 stockPrice: this.stock.price,

@@ -1,6 +1,5 @@
 <template>
     <div class="">
-        <p>hello</p>
         <app-stock v-for="stock in stocks" :key="$index" :stock='stock'></app-stock>
     </div>
 </template>

@@ -48,6 +48,9 @@ export default {
             return this.$store.getters.funds;
         }
     },
+    created() {
+        this.loadData();
+    },
     methods: {
         ...mapActions({
             randomizeStocks: 'randomizeStocks',
@@ -57,9 +60,10 @@ export default {
             this.randomizeStocks();
         },
         saveData() {
+     
             const data = {
                 funds: this.$store.getters.funds,
-                stockPortofolio: this.$store.getters.stockPortofolio,
+                stockPortfolio: this.$store.getters.stockPortfolio,
                 stocks: this.$store.getters.stocks
             };
             this.$http.put('data.json', data)

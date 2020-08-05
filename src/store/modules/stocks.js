@@ -8,13 +8,14 @@ const mutations = {
         state.stocks = stocks;
     },
     'RND_STOCKS' (state) {
-
+        state.stocks.forEach(stock => {
+            stock.price = stock.price * (1 + Math.random());
+        })
     }
 }
 
 const actions = {
     buyStock: ({commit}, order) => {
-        debugger
         commit('BUY_STOCK', order)
     },
     initStocks: ( {commit}) => {
